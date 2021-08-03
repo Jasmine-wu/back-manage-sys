@@ -1,22 +1,29 @@
 // 一：切换登陆注册
 $(function() {
 
+    // 自定义表单验证规则
+    // 1.先拿到form对象
+    var form = layui.form;
+    var layer = layui.layer;
+
+
     $('.link-register').click(function() {
+        // 清空表单数据
+        $("#login-form")[0].reset();
+
         $(".login").hide();
         $(".register").show();
     })
 
     $('.link-login').click(function() {
+        // 清空表单数据
+        $("#reg-form")[0].reset();
 
         $('.register').hide();
         $(".login").show();
 
     });
 
-    // 自定义表单验证规则
-    // 1.先拿到form对象
-    var form = layui.form;
-    var layer = layui.layer;
 
     // 2:
     form.verify({
@@ -55,10 +62,14 @@ $(function() {
             if (res.status !== 0) return layer.msg(`${res.message}`);
 
             // 3.2 注册成功弹出提示信息，弹出层
-            layer.msg('注册成功');
+            layer.msg('注册成功', function() {
+                // 清空表单
+                $("#reg-form")[0].reset();
 
-            // // 3.3 自动跳转到登陆表单
-            $('.link-login').click();
+                // // 3.3 自动跳转到登陆表单
+                $('.link-login').click();
+
+            });
 
         })
 
@@ -71,38 +82,27 @@ $(function() {
         e.preventDefault();
 
         // 2. 一次性拿到登陆提交数据
-
-
         $.ajax({
             method: 'POST',
             url: '/api/login',
             data: $(this).serialize(),
             success: (res) => {
-                console.log(res);
                 if (res.status !== 0) return alert(`${res.message}`);
-
                 // 3.将服务器返回的用户token保存本地
                 localStorage.setItem('token', res.token);
-                // 4.跳转页面
-                window.location.href = './index.html';
 
+                layer.msg('登陆成功', function() {
 
+                    // 清空表单
+                    $("#login-form")[0].reset();
 
-                // 登录成功后清空表单
-                // layui.layer.msg(res.message, {
-                //     icon: -1,
-                //     time: 1000 //2秒关闭（如果不配置，默认是3秒）
-                // }, () => {
-                //     // 将服务器返回的token值存储到本地
-                //     localStorage.setItem('token', res.token);
-                //     // 跳转到首页
-                //     window.location.href = './index.html';
-                // });
+                    // 4.跳转页面
+                    window.location.href = './index.html';
+
+                });
             }
+
         })
-
-
     })
-
 
 })
