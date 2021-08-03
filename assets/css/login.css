@@ -1,0 +1,65 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    /* 设置body宽高 */
+    width: 100%;
+    height: 100%;
+    /* 设置body背景图 */
+    background: url('../images/login_bg.jpg') no-repeat center;
+    background-size: cover;
+}
+
+
+/* 登陆注册模块 */
+
+.login-register {
+    width: 400px;
+    height: 310px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 注意：不要分开写 */
+    transform: translate(-50%, -50%);
+    background-color: white;
+}
+
+
+/* 如何设置图片居中 */
+
+.title {
+    height: 60px;
+    background: url('../images/login_title.png') no-repeat center;
+}
+
+.register {
+    display: none;
+}
+
+.login-register form {
+    padding: 0 30px;
+}
+
+.login-register .links {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.login-register .links a {
+    font-size: 13px;
+}
+
+.layui-form-item {
+    position: relative;
+}
+
+.layui-icon {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+}
+
+.layui-form-item .layui-input {
+    padding-left: 35px;
+}
