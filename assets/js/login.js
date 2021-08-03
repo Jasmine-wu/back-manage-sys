@@ -62,14 +62,14 @@ $(function() {
             if (res.status !== 0) return layer.msg(`${res.message}`);
 
             // 3.2 注册成功弹出提示信息，弹出层
-            layer.msg('注册成功', function() {
-                // 清空表单
-                $("#reg-form")[0].reset();
+            layer.msg('注册成功');
 
-                // // 3.3 自动跳转到登陆表单
-                $('.link-login').click();
+            // 清空表单
+            $("#reg-form")[0].reset();
 
-            });
+            // // 3.3 自动跳转到登陆表单
+            $('.link-login').click();
+
 
         })
 
