@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="./assets/lib/layui/css/layui.css">
     <link rel="stylesheet" href="./assets/css/index.css">
 
+    <script src="./assets/lib/jquery.js"></script>
+    <script src="./assets/js/baseAPI.js"></script>
+
 </head>
 
 <body>
@@ -30,9 +33,15 @@
 
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="">基本资料</a></dd>
-                        <dd><a href="">更换头像</a></dd>
-                        <dd><a href="">重置密码</a></dd>
+                        <!-- target: 在哪里打开? 在name=‘ifr’的iframe中打开 -->
+                        <dd><a href="./user/user-info.html" target="ifr">基本资料</a></dd>
+                        <dd>
+                            <a href="./user/user-avatar.html" target="ifr">更换头像</a>
+                        </dd>
+                        <dd>
+                            <a href="./user/reset-pwd.html" target="ifr">重置密码</a>
+                        </dd>
+
                     </dl>
                 </li>
                 <li class="layui-nav-item">
@@ -49,7 +58,7 @@
                 <!-- 左侧导航个人头像 -->
                 <div class="userinfo">
                     <!-- 图片头像 -->
-                    <img src="" alt="">
+                    <img class="layui-nav-img" src="" alt="">
                     <!-- 文本头像 -->
                     <span class="text-avatar"></span>
                     <span class="uname"></span>
@@ -58,7 +67,7 @@
                 <!-- lay-shrink="all",同一事件只允许一个item是展开的-->
                 <ul class="layui-nav layui-nav-tree" lay-shrink="all">
 
-                    <!-- 默认选中首页：layui-this: 无效了 -->
+                    <!-- 默认选中首页：layui-this:  -->
                     <li class="layui-nav-item layui-this">
                         <!-- a结合iframe是如何使用的？点击a,在ifr里打开/home/dashboard.html页面 -->
                         <a href="./home/dashboard.html" target="ifr">
@@ -82,9 +91,9 @@
                             <i class="iconfont icon-user" style="font-size: 18px; color:#ccc;"></i>&nbsp;&nbsp;个人中心
                         </a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;">基本资料</a></dd>
-                            <dd><a href="javascript:;">更换头像</a></dd>
-                            <dd><a href="javascript:;">重置密码</a></dd>
+                            <dd><a href="./user/user-info.html" target="ifr">基本资料</a></dd>
+                            <dd><a href="./user/user-avatar.html" target="ifr">更换头像</a></dd>
+                            <dd><a href="./user/reset-pwd.html" target="ifr">重置密码</a></dd>
 
                         </dl>
                     </li>
@@ -104,11 +113,9 @@
             <span>@版权声明:解释权归开发者所有</span>
         </div>
     </div>
-    <script src="./assets/lib/jquery.js"></script>
-    <script src="./assets/lib/layui/layui.all.js"></script>
-    <script src="./assets/js/baseAPI.js"></script>
-    <script src="./assets/js/index.js"></script>
 
+    <script src="./assets/lib/layui/layui.all.js"></script>
+    <script src="./assets/js/index.js"></script>
 
 </body>
 

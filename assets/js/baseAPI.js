@@ -1,5 +1,4 @@
 // 使用jquery发起请求之前调用预处理函数
-
 $.ajaxPrefilter(function(options) {
     // 预处理：加上baseurl
     options.url = 'http://www.liulongbin.top:3007' + options.url;
@@ -16,6 +15,7 @@ $.ajaxPrefilter(function(options) {
     // complete: 1. 不管jquery的ajax请求是成功还是失败都会调用
     //          `2. 响应数据：res.responseJSON
     options.complete = function(res) {
+        console.log(res);
 
         var data = res.responseJSON;
         if (data.status === 1 && data.message === "身份认证失败！") {

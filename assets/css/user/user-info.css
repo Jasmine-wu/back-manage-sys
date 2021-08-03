@@ -1,0 +1,15 @@
+/* 个人信息-基础资料 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 10px 10px;
+    background-color: #ccc;
+}
+
+.layui-form-item input {
+    width: 500px;
+}
