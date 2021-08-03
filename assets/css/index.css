@@ -1,0 +1,69 @@
+/* 底部 */
+
+.layui-footer {
+    font-size: 12px;
+    text-align: center;
+}
+
+
+/* 中间内容iframe相关 */
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 去除溢出的滑动条 */
+
+.layui-body {
+    overflow: hidden;
+}
+
+
+/* 取消给a默认加css的动画 */
+
+a {
+    transition: none!important;
+}
+
+
+/* 个人信息头像 */
+
+
+/* 1. 图片头像 */
+
+.userinfo {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+
+/* 图片头像 */
+
+.userinfo img {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.userinfo span {
+    /* 禁止用户名被用户选中 */
+    user-select: none;
+}
+
+
+/* 2 文本头像 */
+
+.text-avatar {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #009688;
+}

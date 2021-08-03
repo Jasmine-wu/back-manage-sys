@@ -89,17 +89,15 @@ $(function() {
             success: (res) => {
                 if (res.status !== 0) return alert(`${res.message}`);
                 // 3.将服务器返回的用户token保存本地
+                layer.msg('登陆成功');
+
                 localStorage.setItem('token', res.token);
+                // 清空表单
+                $("#login-form")[0].reset();
 
-                layer.msg('登陆成功', function() {
+                // 4.跳转页面
+                window.location.href = './index.html';
 
-                    // 清空表单
-                    $("#login-form")[0].reset();
-
-                    // 4.跳转页面
-                    window.location.href = './index.html';
-
-                });
             }
 
         })
