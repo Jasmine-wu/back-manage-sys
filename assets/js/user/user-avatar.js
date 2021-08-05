@@ -47,7 +47,7 @@ $(function() {
     uploadCropperImg();
 
 
-    // 2.2 监听file input事件
+    // 2.2 监听file input的选择文件事件
     $('#file').on('change', function(e) {
 
         var fileList = e.target.files;
@@ -76,7 +76,9 @@ $(function() {
 
     // 2.4 点击确认，更新/上传新头像
     $('#confirn-btn').on('click', function() {
-        // 2.4.1 拿到图片base64 格式的字符串
+        // 2.4.1 将裁剪对象图片转化成base64格式的字符串
+        // 文件转base64格式：优点，比如说图片，加载速度会快。缺点：体积会大34%
+        // 总结：小图片/小于100k的图片可转base64格式字符串
         var dataURL = $image.cropper('getCroppedCanvas', { // 创建一个 Canvas 画布
                 width: 100,
                 height: 100
@@ -100,11 +102,6 @@ $(function() {
             }
         })
 
-
-
     })
-
-
-
 
 })

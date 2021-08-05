@@ -15,7 +15,6 @@ $.ajaxPrefilter(function(options) {
     // complete: 1. 不管jquery的ajax请求是成功还是失败都会调用
     //          `2. 响应数据：res.responseJSON
     options.complete = function(res) {
-        console.log(res);
 
         var data = res.responseJSON;
         if (data.status === 1 && data.message === "身份认证失败！") {
