@@ -1,2 +1,3 @@
-# 后台管理系统
-layui+jquery
+# 技术栈
+
+layui+jquery+bootstrap+echarts
